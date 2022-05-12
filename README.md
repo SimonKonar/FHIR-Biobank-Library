@@ -2,7 +2,7 @@
 
 This Python library is simplifying work with FHIR library focused on biobanks.
 This library works with Patient, Specimen, and Condition resources, along with
-extensions needed for these resources as defined by [simplifier.net/bbrmi.de][https://simplifier.net/bbmri.de]
+extensions needed for these resources as defined by [simplifier.net/bbrmi.de](https://simplifier.net/bbmri.de)
 
 ## Installation
 pip install FHIR_library *TODO WORKING NAME*
