@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<patient biobank="MOU" consent="true" id="4816522" month="--12" sex="female" xmlns="http://www.bbmri.cz/schemas/biobank/data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="exportNIS.xsd" year="1997">
+	<LTS>
+		<tissue number="723" sampleId="BBM:2021:723:1" year="2021">
+			<samplesNo>3</samplesNo>
+			<availableSamplesNo>3</availableSamplesNo>
+			<materialType>1</materialType>
+			<pTNM>T4bN1M</pTNM>
+			<morphology>8500/32</morphology>
+			<diagnosis>C509</diagnosis>
+			<cutTime>2021-11-04T09:40:00</cutTime>
+			<freezeTime>2021-11-04T10:08:00</freezeTime>
+			<retrieved>operational</retrieved>
+		</tissue>
+		<tissue number="723" sampleId="BBM:2021:723:4" year="2021">
+			<samplesNo>3</samplesNo>
+			<availableSamplesNo>3</availableSamplesNo>
+			<materialType>4</materialType>
+			<pTNM>T4bN1M</pTNM>
+			<morphology>8500/32</morphology>
+			<diagnosis>C509</diagnosis>
+			<cutTime>2021-11-04T09:40:00</cutTime>
+			<freezeTime>2021-11-04T10:08:00</freezeTime>
+			<retrieved>operational</retrieved>
+		</tissue>
+		<tissue number="723" sampleId="BBM:2021:723:53" year="2021">
+			<samplesNo>1</samplesNo>
+			<availableSamplesNo>1</availableSamplesNo>
+			<materialType>53</materialType>
+			<pTNM>T4bN1M</pTNM>
+			<morphology>8500/32</morphology>
+			<diagnosis>C509</diagnosis>
+			<cutTime>2021-11-04T09:40:00</cutTime>
+			<freezeTime>2021-11-04T10:08:00</freezeTime>
+			<retrieved>operational</retrieved>
+		</tissue>
+		<tissue number="723" sampleId="BBM:2021:723:54" year="2021">
+			<samplesNo>1</samplesNo>
+			<availableSamplesNo>1</availableSamplesNo>
+			<materialType>54</materialType>
+			<pTNM>T4bN1M</pTNM>
+			<morphology>8500/32</morphology>
+			<diagnosis>C509</diagnosis>
+			<cutTime>2021-11-04T09:40:00</cutTime>
+			<freezeTime>2021-11-04T10:08:00</freezeTime>
+			<retrieved>operational</retrieved>
+		</tissue>
+	</LTS>
+	<STS>
+		<diagnosisMaterial number="136043" sampleId="&amp;:2021:136043" year="2021">
+			<materialType>S</materialType>
+			<diagnosis>C509</diagnosis>
+			<takingDate>2021-10-18T10:02:00</takingDate>
+			<retrieved>unknown</retrieved>
+		</diagnosisMaterial>
+	</STS>
+</patient>
