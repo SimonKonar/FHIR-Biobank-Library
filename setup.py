@@ -1,7 +1,6 @@
-# Always prefer setuptools over distutils
-from setuptools import setup, find_packages
+from setuptools import setup
 
-# To use a consistent encoding
+
 from codecs import open
 from os import path
 
@@ -14,11 +13,11 @@ with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
 
 # This call to setup() does all the work
 setup(
-    name="fhir-biobank",
+    name="fhir_biobank",
     version="0.1.0",
     description="Python library working with FHIR standard in scope of biobanks requirements",
     long_description=long_description,
-    long_description_content_type="text/markdown",
+    long_description_content_type= "text/markdown",
     url="https://fhir-biobank.readthedocs.io/",
     author="Simon Konar",
     author_email="simon.konar@gmail.com",
