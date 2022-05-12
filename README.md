@@ -16,7 +16,7 @@ patient_identifier = "4816522"
 patient_gender = "female"
 patient_birthdate = date(2000, 12, 11)
 
-patient = ptn.PatientResource(internal_id, patient_identifier, patient_gender, patient_birthdate)
+patient = PatientResource(internal_id, patient_identifier, patient_gender, patient_birthdate)
 ```
 
 Standard action is to convert FHIR resource to a JSON representation.
@@ -58,9 +58,9 @@ Here is a example how to create Bundle resource containing the Patient resource 
 ```python
 fullURL_patient_resource = "https://example.com/patient/0"
 shortURL_patient_resource = "patient/0"
-entry = bnd.Entry(patient, fullURL_patient_resource, shortURL_patient_resource)
+entry = Entry(patient, fullURL_patient_resource, shortURL_patient_resource)
 entries = [entry]
 bundle_id = "424242"
-bundle = bnd.Bundle(bundle_id, entries)
+bundle = Bundle(bundle_id, entries)
 ```
 
