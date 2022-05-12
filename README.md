@@ -5,7 +5,7 @@ This library works with Patient, Specimen, and Condition resources, along with
 extensions needed for these resources as defined by [simplifier.net/bbrmi.de](https://simplifier.net/bbmri.de)
 
 ## Installation
-pip install FHIR_library *TODO WORKING NAME*
+pip install FHIR-biobank
 
 ## Usage
 This library allows you to easily create FHIR resources along with all the data in a single constructor.
@@ -15,15 +15,16 @@ internal_id = "0"
 patient_identifier = "4816522"
 patient_gender = "female"
 patient_birthdate = date(2000, 12, 11)
-
 patient = PatientResource(internal_id, patient_identifier, patient_gender, patient_birthdate)
 ```
 
 Standard action is to convert FHIR resource to a JSON representation.
 Use case of converting Patient resource to a JSON representation:
+
 ```python
 json_representation = patient.patientJSON
 ```
+
 JSON representation of the Patient resource initialized above looks like this:
 ```json
 {
