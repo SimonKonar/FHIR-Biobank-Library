@@ -4,7 +4,7 @@ from unittest import mock
 import pytest
 from datetime import date, timedelta
 
-from fhir_library.patient import PatientResource
+from fhir_biobank.patient import PatientResource
 
 
 def test_patient_correct_identifier():

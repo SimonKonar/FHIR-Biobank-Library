@@ -1,5 +1,5 @@
 import pytest
-from fhir_library.diagnosis import Diagnosis
+from fhir_biobank.diagnosis import Diagnosis
 
 
 def test_diagnosis_correct_code():

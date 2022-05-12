@@ -1,14 +1,14 @@
 import pytest
 from datetime import date, timedelta
 from unittest import mock
-from fhir_library.diagnosis import Diagnosis
-from fhir_library.patient import PatientResource
-from fhir_library.specimen import SpecimenResource
-from fhir_library.storageTemperature import StorageTemperature
+from fhir_biobank.diagnosis import Diagnosis
+from fhir_biobank.patient import PatientResource
+from fhir_biobank.specimen import SpecimenResource
+from fhir_biobank.storageTemperature import StorageTemperature
 
 
 def test_specimen_correct_required_parameters_only():
-    with mock.patch("fhir_library.patient.PatientResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"):
         identifier = "2441"
         specimen_material_code = "whole-blood"
         patient = PatientResource("0", "744")
@@ -25,7 +25,7 @@ def test_specimen_correct_required_parameters_only():
 
 
 def test_specimen_incorrect_type_identifier():
-    mock.patch("fhir_library.patient.PatientResource")
+    mock.patch("fhir_biobank.patient.PatientResource")
     identifier = 2441
     specimen_material_code = "whole-blood"
     patient = PatientResource("0", "744")
@@ -37,7 +37,7 @@ def test_specimen_incorrect_type_identifier():
 
 
 def test_specimen_incorrect_type_material_code():
-    mock.patch("fhir_library.patient.PatientResource")
+    mock.patch("fhir_biobank.patient.PatientResource")
     identifier = "2441"
     specimen_material_code = []
     patient = PatientResource("0", "744")
@@ -49,7 +49,7 @@ def test_specimen_incorrect_type_material_code():
 
 
 def test_specimen_incorrect_value_identifier():
-    mock.patch("fhir_library.patient.PatientResource")
+    mock.patch("fhir_biobank.patient.PatientResource")
     identifier = "2441"
     specimen_material_code = "incorrect code"
     patient = PatientResource("0", "744")
@@ -61,7 +61,7 @@ def test_specimen_incorrect_value_identifier():
 
 
 def test_specimen_incorrect_type_collected_date():
-    mock.patch("fhir_library.patient.PatientResource")
+    mock.patch("fhir_biobank.patient.PatientResource")
     identifier = "2441"
     specimen_material_code = "whole-blood"
     patient = PatientResource("0", "744")
@@ -73,7 +73,7 @@ def test_specimen_incorrect_type_collected_date():
 
 
 def test_specimen_incorrect_value_collected_date():
-    mock.patch("fhir_library.patient.PatientResource")
+    mock.patch("fhir_biobank.patient.PatientResource")
     identifier = "2441"
     specimen_material_code = "whole-blood"
     patient = PatientResource("0", "744")
@@ -85,7 +85,7 @@ def test_specimen_incorrect_value_collected_date():
 
 
 def test_specimen_incorrect_type_quantity():
-    mock.patch("fhir_library.patient.PatientResource")
+    mock.patch("fhir_biobank.patient.PatientResource")
     identifier = "2441"
     specimen_material_code = "whole-blood"
     patient = PatientResource("0", "744")
@@ -97,7 +97,7 @@ def test_specimen_incorrect_type_quantity():
 
 
 def test_specimen_correct_body_site_collection_code():
-    mock.patch("fhir_library.patient.PatientResource")
+    mock.patch("fhir_biobank.patient.PatientResource")
     identifier = "2441"
     specimen_material_code = "whole-blood"
     patient = PatientResource("0", "744")
@@ -111,7 +111,7 @@ def test_specimen_correct_body_site_collection_code():
 
 
 def test_specimen_incorrect_type_body_site_collection_code():
-    mock.patch("fhir_library.patient.PatientResource")
+    mock.patch("fhir_biobank.patient.PatientResource")
     identifier = "2441"
     specimen_material_code = "whole-blood"
     patient = PatientResource("0", "744")
@@ -124,7 +124,7 @@ def test_specimen_incorrect_type_body_site_collection_code():
 
 
 def test_specimen_correct_quantity_unit():
-    mock.patch("fhir_library.patient.PatientResource")
+    mock.patch("fhir_biobank.patient.PatientResource")
     identifier = "2441"
     specimen_material_code = "whole-blood"
     patient = PatientResource("0", "744")
@@ -139,7 +139,7 @@ def test_specimen_correct_quantity_unit():
 
 
 def test_specimen_incorrect_type_quantity_unit():
-    mock.patch("fhir_library.patient.PatientResource")
+    mock.patch("fhir_biobank.patient.PatientResource")
     identifier = "2441"
     specimen_material_code = "whole-blood"
     patient = PatientResource("0", "744")
@@ -152,7 +152,7 @@ def test_specimen_incorrect_type_quantity_unit():
 
 
 def test_specimen_correct_quantity_code():
-    mock.patch("fhir_library.patient.PatientResource")
+    mock.patch("fhir_biobank.patient.PatientResource")
     identifier = "2441"
     specimen_material_code = "whole-blood"
     patient = PatientResource("0", "744")
@@ -167,7 +167,7 @@ def test_specimen_correct_quantity_code():
 
 
 def test_specimen_incorrect_type_quantity_code():
-    mock.patch("fhir_library.patient.PatientResource")
+    mock.patch("fhir_biobank.patient.PatientResource")
     identifier = "2441"
     specimen_material_code = "whole-blood"
     patient = PatientResource("0", "744")
@@ -181,8 +181,8 @@ def test_specimen_incorrect_type_quantity_code():
 
 
 def test_specimen_correct_extensions():
-    with mock.patch("fhir_library.patient.PatientResource"), mock.patch(
-            "fhir_library.diagnosis.Diagnosis"):
+    with mock.patch("fhir_biobank.patient.PatientResource"), mock.patch(
+            "fhir_biobank.diagnosis.Diagnosis"):
         identifier = "2441"
         specimen_material_code = "whole-blood"
         patient = PatientResource("0", "744")
@@ -197,8 +197,8 @@ def test_specimen_correct_extensions():
 
 
 def test_specimen_incorrect_type_extensions():
-    with mock.patch("fhir_library.patient.PatientResource"), mock.patch(
-            "fhir_library.diagnosis.Diagnosis"):
+    with mock.patch("fhir_biobank.patient.PatientResource"), mock.patch(
+            "fhir_biobank.diagnosis.Diagnosis"):
         identifier = "2441"
         specimen_material_code = "whole-blood"
         patient = PatientResource("0", "744")
@@ -213,8 +213,8 @@ def test_specimen_incorrect_type_extensions():
 
 
 def test_specimen_incorrect_value_in_extensions():
-    with mock.patch("fhir_library.patient.PatientResource"), mock.patch(
-            "fhir_library.diagnosis.Diagnosis"):
+    with mock.patch("fhir_biobank.patient.PatientResource"), mock.patch(
+            "fhir_biobank.diagnosis.Diagnosis"):
         identifier = "2441"
         specimen_material_code = "whole-blood"
         patient = PatientResource("0", "744")
@@ -230,8 +230,8 @@ def test_specimen_incorrect_value_in_extensions():
 
 
 def test_specimen_convert_to_fhir_gets_called_only_once():
-    with mock.patch("fhir_library.patient.PatientResource"), mock.patch(
-            "fhir_library.diagnosis.Diagnosis"):
+    with mock.patch("fhir_biobank.patient.PatientResource"), mock.patch(
+            "fhir_biobank.diagnosis.Diagnosis"):
         identifier = "2441"
         specimen_material_code = "whole-blood"
         patient = PatientResource("0", "744")
@@ -250,8 +250,8 @@ def test_specimen_convert_to_fhir_gets_called_only_once():
 
 
 def test_specimen_correct_specimenJson():
-    with mock.patch("fhir_library.patient.PatientResource"), mock.patch(
-            "fhir_library.diagnosis.Diagnosis"):
+    with mock.patch("fhir_biobank.patient.PatientResource"), mock.patch(
+            "fhir_biobank.diagnosis.Diagnosis"):
         identifier = "2441"
         specimen_material_code = "whole-blood"
         patient = PatientResource("0", "744")

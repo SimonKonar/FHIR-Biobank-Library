@@ -1,4 +1,4 @@
-from fhir_library.helperFunctions import Helper
+from fhir_biobank.helperFunctions import Helper
 import pytest
 from fhirclient.models.coding import Coding
 

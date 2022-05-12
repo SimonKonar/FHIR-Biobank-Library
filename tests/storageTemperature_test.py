@@ -1,5 +1,5 @@
 import pytest
-from fhir_library.storageTemperature import StorageTemperature
+from fhir_biobank.storageTemperature import StorageTemperature
 
 
 def test_storage_temperature_correct_code():

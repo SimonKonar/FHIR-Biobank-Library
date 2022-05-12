@@ -13,7 +13,7 @@ with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
 
 # This call to setup() does all the work
 setup(
-    name="fhir_biobank",
+    name="test_library_fhir_biobank",
     version="0.1.0",
     description="Python library working with FHIR standard in scope of biobanks requirements",
     long_description=long_description,
@@ -29,7 +29,7 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Operating System :: OS Independent"
     ],
-    packages=["fhir_library"],
+    packages=["fhir_biobank"],
     include_package_data=True,
     install_requires=["fhirclient", "pytest"]
 )

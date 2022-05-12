@@ -3,19 +3,19 @@ from unittest import mock
 
 import pytest
 
-from fhir_library.bundle import Bundle, Entry
-from fhir_library.condition import ConditionResource
-from fhir_library.patient import PatientResource
+from fhir_biobank.bundle import Bundle, Entry
+from fhir_biobank.condition import ConditionResource
+from fhir_biobank.patient import PatientResource
 from fhirclient.models.patient import Patient
 from fhirclient.models.specimen import Specimen
 from fhirclient.models.condition import Condition
 import fhirclient.models.bundle as fhir_bundle
 
-from fhir_library.specimen import SpecimenResource
+from fhir_biobank.specimen import SpecimenResource
 
 
 def test_entry_correct_patient_resource():
-    with mock.patch("fhir_library.patient.PatientResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"):
         patient = PatientResource("0", "2441")
         full_url = "https:/example.com/patient/2441"
         short_url = "patient/2441"
@@ -27,8 +27,8 @@ def test_entry_correct_patient_resource():
 
 
 def test_entry_correct_specimen_resource():
-    with mock.patch("fhir_library.patient.PatientResource"), mock.patch(
-            "fhir_library.specimen.SpecimenResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"), mock.patch(
+            "fhir_biobank.specimen.SpecimenResource"):
         patient = PatientResource("0", "2441")
         specimen = SpecimenResource("0", "442", "bone-marrow", patient,
                                     date(2012, 2, 28), 4.0)
@@ -42,8 +42,8 @@ def test_entry_correct_specimen_resource():
 
 
 def test_entry_correct_condition_resource():
-    with mock.patch("fhir_library.patient.PatientResource"), mock.patch(
-            "fhir_library.specimen.SpecimenResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"), mock.patch(
+            "fhir_biobank.specimen.SpecimenResource"):
         patient = PatientResource("0", "2441")
         condition = ConditionResource("0", "1442", date(2012, 5, 8), patient)
         full_url = "https:/example.com/condition/1442"
@@ -64,7 +64,7 @@ def test_entry_incorrect_type_resource():
 
 
 def test_entry_incorrect_type_full_url():
-    with mock.patch("fhir_library.patient.PatientResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"):
         patient = PatientResource("0", "2441")
         full_url = 422
         short_url = "patient/2441"
@@ -73,7 +73,7 @@ def test_entry_incorrect_type_full_url():
 
 
 def test_entry_incorrect_type_short_url():
-    with mock.patch("fhir_library.patient.PatientResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"):
         patient = PatientResource("0", "2441")
         full_url = "https:/example.com/patient/2441"
         short_url = 2441
@@ -82,7 +82,7 @@ def test_entry_incorrect_type_short_url():
 
 
 def test_entry_correct_request_method():
-    with mock.patch("fhir_library.patient.PatientResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"):
         patient = PatientResource("0", "2441")
         full_url = "https:/example.com/patient/2441"
         short_url = "patient/2441"
@@ -92,7 +92,7 @@ def test_entry_correct_request_method():
 
 
 def test_entry_incorrect_type_request_method():
-    with mock.patch("fhir_library.patient.PatientResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"):
         patient = PatientResource("0", "2441")
         full_url = "https:/example.com/patient/2441"
         short_url = "patient/2441"
@@ -102,7 +102,7 @@ def test_entry_incorrect_type_request_method():
 
 
 def test_entry_incorrect_value_request_method():
-    with mock.patch("fhir_library.patient.PatientResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"):
         patient = PatientResource("0", "2441")
         full_url = "https:/example.com/patient/2441"
         short_url = "patient/2441"
@@ -112,7 +112,7 @@ def test_entry_incorrect_value_request_method():
 
 
 def test_entry_convert_to_fhir_gets_called_only_once():
-    with mock.patch("fhir_library.patient.PatientResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"):
         patient = PatientResource("0", "2441")
         full_url = "https:/example.com/patient/2441"
         short_url = "patient/2441"
@@ -125,7 +125,7 @@ def test_entry_convert_to_fhir_gets_called_only_once():
 
 
 def test_entry_correct_entryJson():
-    with mock.patch("fhir_library.patient.PatientResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"):
         patient = PatientResource("0", "2441")
         full_url = "https:/example.com/patient/2441"
         short_url = "patient/2441"
@@ -134,7 +134,7 @@ def test_entry_correct_entryJson():
 
 
 def test_bundle_correct_values():
-    with mock.patch("fhir_library.patient.PatientResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"):
         patient = PatientResource("0", "2441")
         full_url = "https:/example.com/patient/2441"
         short_url = "patient/2441"
@@ -145,7 +145,7 @@ def test_bundle_correct_values():
 
 
 def test_bundle_incorrect_id():
-    with mock.patch("fhir_library.patient.PatientResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"):
         patient = PatientResource("0", "2441")
         bundle_id = 6441
         full_url = "https:/example.com/patient/2441"
@@ -156,9 +156,9 @@ def test_bundle_incorrect_id():
 
 
 def test_bundle_multiple_correct_entries():
-    with mock.patch("fhir_library.patient.PatientResource"), mock.patch(
-            "fhir_library.specimen.SpecimenResource"), mock.patch(
-        "fhir_library.condition.ConditionResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"), mock.patch(
+            "fhir_biobank.specimen.SpecimenResource"), mock.patch(
+        "fhir_biobank.condition.ConditionResource"):
         patient = PatientResource("0", "2441")
         specimen = SpecimenResource("0", "442", "bone-marrow", patient,
                                     date(2012, 2, 28), 4.0)
@@ -177,7 +177,7 @@ def test_bundle_multiple_correct_entries():
 
 
 def test_bundle_incorrect_value_in_entries():
-    with mock.patch("fhir_library.patient.PatientResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"):
         patient = PatientResource("0", "2441")
         full_url = "https:/example.com/patient/2441"
         short_url = "patient/2441"
@@ -195,7 +195,7 @@ def test_bundle_empty_entries():
 
 
 def test_bundle_incorrect_type_bundle_type():
-    with mock.patch("fhir_library.patient.PatientResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"):
         patient = PatientResource("0", "2441")
         full_url = "https:/example.com/patient/2441"
         short_url = "patient/2441"
@@ -206,7 +206,7 @@ def test_bundle_incorrect_type_bundle_type():
 
 
 def test_bundle_incorrect_value_bundle_type():
-    with mock.patch("fhir_library.patient.PatientResource"):
+    with mock.patch("fhir_biobank.patient.PatientResource"):
         patient = PatientResource("0", "2441")
         full_url = "https:/example.com/patient/2441"
         short_url = "patient/2441"

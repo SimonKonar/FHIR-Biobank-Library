@@ -1,15 +1,15 @@
 import pytest
 from unittest import mock
-from fhir_library.condition import ConditionResource
+from fhir_biobank.condition import ConditionResource
 from datetime import date, timedelta
 
-from fhir_library.patient import PatientResource
+from fhir_biobank.patient import PatientResource
 
 
 def test_condition_all_correct_values():
     code = "C42"
     condition_date = date(2012, 11, 9)
-    with mock.patch("fhir_library.patient.PatientResource.identifier",
+    with mock.patch("fhir_biobank.patient.PatientResource.identifier",
                     new_callable=mock.PropertyMock) as mock_identifier:
         mock_identifier.return_value = "2441"
         mock_patient = PatientResource("0", "2441")

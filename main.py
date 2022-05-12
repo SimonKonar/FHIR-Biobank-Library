@@ -1,4 +1,4 @@
-from fhir_library import bundle as bnd, diagnosis as dng, patient as ptn, \
+from fhir_biobank import bundle as bnd, diagnosis as dng, patient as ptn, \
     specimen as spc
 import fhirclient.models.patient as fhirclient_patient
 import fhirclient.models.identifier as fhirclient_identifier
