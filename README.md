@@ -1,16 +1,18 @@
 # FHIR Library
 
-This Python library is simplifying work with FHIR library focused on biobanks.
+This Python library is simplifying work with FHIR library focused on BBMRI.de biobanks.
 This library works with Patient, Specimen, and Condition resources, along with
 extensions needed for these resources as defined by [simplifier.net/bbrmi.de](https://simplifier.net/bbmri.de)
 
 ## Installation
-pip install FHIR-biobank
+pip install fhir-biobank
 
 ## Usage
 This library allows you to easily create FHIR resources along with all the data in a single constructor.
 Use case of creating a simple Patient resource:
 ```python
+from fhir_biobank import PatientResource
+
 internal_id = "0"
 patient_identifier = "4816522"
 patient_gender = "female"
@@ -57,6 +59,8 @@ Bundle contains list of Entry resources, where each Entry resource represents sp
 Here is a example how to create Bundle resource containing the Patient resource made earlier:
 
 ```python
+from fhir_biobank.bundle import Bundle, Entry
+
 fullURL_patient_resource = "https://example.com/patient/0"
 shortURL_patient_resource = "patient/0"
 entry = Entry(patient, fullURL_patient_resource, shortURL_patient_resource)
