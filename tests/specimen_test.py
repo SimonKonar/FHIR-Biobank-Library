@@ -262,4 +262,4 @@ def test_specimen_correct_specimenJson():
                                     patient,
                                     collected_date, quantity,
                                     extensions=extensions)
-        assert type(specimen.specimenJSON) == dict
+        assert type(specimen.specimenJSON()) == dict

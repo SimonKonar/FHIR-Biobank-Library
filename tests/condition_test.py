@@ -73,4 +73,4 @@ def test_condition_correct_conditionJson():
     condition_date = date(2002, 4, 11)
     patient = PatientResource("0", "2441")
     condition = ConditionResource("0", code, condition_date, patient)
-    assert type(condition.conditionJSON) == dict
+    assert type(condition.conditionJSON()) == dict

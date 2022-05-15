@@ -148,7 +148,7 @@ def test_patient_correct_patientJson():
     gender = "male"
     birth_date = date(2000, 2, 18)
     patient = PatientResource("0", "2441", gender, birth_date)
-    assert type(patient.patientJSON) == dict
+    assert type(patient.patientJSON()) == dict
 
 
 """

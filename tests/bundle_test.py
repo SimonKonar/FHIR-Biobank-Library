@@ -130,7 +130,7 @@ def test_entry_correct_entryJson():
         full_url = "https:/example.com/patient/2441"
         short_url = "patient/2441"
         entry = Entry(patient, full_url, short_url)
-        assert type(entry.entryJSON) == dict
+        assert type(entry.entryJSON()) == dict
 
 
 def test_bundle_correct_values():
@@ -214,4 +214,3 @@ def test_bundle_incorrect_value_bundle_type():
         incorrect_bundle_type = "incorrect type of bundle"
         with pytest.raises(TypeError):
             bundle = Bundle("6441", [entry_patient], incorrect_bundle_type)
-
