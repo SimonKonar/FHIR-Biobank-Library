@@ -105,10 +105,9 @@ class ConditionResource:
             self._FHIRCondition = self._convert_to_FHIR()
         return self._FHIRCondition
 
-    @property
     def conditionJSON(self):
         """
-        Getter for the Condition resource interpreted as a json format.
+        Method that creates JSON representation of a Condition Resource.
 
         :return: FHIR condition resource interpreted as a json format.
         """

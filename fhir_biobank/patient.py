@@ -273,10 +273,9 @@ class PatientResource:
             self._FHIR_Patient = self._convert_to_FHIR()
         return self._FHIR_Patient
 
-    @property
     def patientJSON(self):
         """
-        Getter for the Entry representation in a json format.
+        Method that creates JSON representation of a Patient Resource.
 
         :return: Json representation containing all given information of
             FHIR patient resource.

@@ -121,10 +121,9 @@ class Entry:
             self._FHIREntry = self._convert_to_FHIR()
         return self._FHIREntry
 
-    @property
     def entryJSON(self):
         """
-        Getter for the Entry representation in a json format.
+        Method that creates JSON representation of an Entry Resource.
 
         :return: FHIR Entry resource represented in a json format.
         """
@@ -235,10 +234,9 @@ class Bundle:
         """
         return self._bundle_type
 
-    @property
     def bundleJSON(self):
         """
-        Getter for the Bundle representation in a json format.
+        Method that creates JSON representation of an Patient Resource.
 
         :return: FHIR Bundle represented in a json format.
         """

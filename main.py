@@ -71,7 +71,7 @@ def my_fhir_library_implementation():
         entries.append(entry)
 
     bundle = bnd.Bundle("45224775412", entries)
-    return bundle.bundleJSON
+    return bundle.bundleJSON()
 
 
 """

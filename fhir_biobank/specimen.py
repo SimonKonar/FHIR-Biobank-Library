@@ -286,10 +286,9 @@ class SpecimenResource:
             self._FHIRSpecimen = self._convert_to_FHIR()
         return self._FHIRSpecimen
 
-    @property
     def specimenJSON(self):
         """
-        Getter for the Entry representation in a json format.
+        Method that creates JSON representation of a Specimen Resource.
 
         :return: FHIR Specimen resource represented in a json format.
         """
