@@ -24,7 +24,7 @@ Standard action is to convert FHIR resource to a JSON representation.
 Use case of converting Patient resource to a JSON representation:
 
 ```python
-json_representation = patient.patientJSON
+json_representation = patient.patientJSON()
 ```
 
 JSON representation of the Patient resource initialized above looks like this:
