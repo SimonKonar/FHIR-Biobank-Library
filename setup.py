@@ -14,8 +14,8 @@ with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
 # This call to setup() does all the work
 setup(
     name="fhir_biobank",
-    version="0.1.2",
-    description="Python library working with FHIR standard in scope of BBMRI.de biobanks requirements",
+    version="0.1.3",
+    description="Python library working with FHIR standard in scope of biobanks MIABIS requirements",
     long_description=long_description,
     long_description_content_type= "text/markdown",
     url="https://fhir-biobank.readthedocs.io/",
