@@ -6,6 +6,17 @@
 Welcome to FHIR library for biobanks's documentation!
 =====================================================
 
+This is a documentation of a Python library that focuses on transforming clinical data into the FHIR standard in range of MIABIS requirements for biobanks. This library works with Patient, Specimen, and Condition resources, along with
+extensions needed for these resources as defined by Simplifier_.
+
+.. _Simplifier: https://simplifier.net/bbmri.de
+
+
+This library is available at PyPI_ along with information on how to install and use this library.
+
+.. _PyPI: https://pypi.org/project/fhir-biobank/0.1.3/
+
+
 .. toctree::
    :maxdepth: 4
    :caption: Contents:
